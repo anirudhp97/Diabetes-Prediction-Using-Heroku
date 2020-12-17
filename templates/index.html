@@ -1,0 +1,169 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes Prediction</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+ <style>
+ body {
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ color: #fff;
+ text-align:center;
+ }
+  .scroll{
+    overflow-y:scroll; 
+    position:relative;
+    height: 100%;
+}
+input.a {
+display: none;
+}
+
+.lb {
+width: 250px;
+text-align: center;
+font-size: 125%;
+padding: 20px;
+}
+.bx {
+text-align:center;
+padding: 20px;
+}
+input {
+width: 350px;
+height: 50px;
+background-color: #fff;
+color: #092756;
+}
+
+body {
+background-image: url(static/css/Healthcare3.jpg);
+}
+</style>
+</head>
+
+<body >
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+			<table style="border: 3px solid white; width: 650px; height: 75px; margin-left: 0px; margin-right: auto; margin-top: 50px; text-align: center;"> 
+					<tr>
+						<td>
+							<h1 style="align:center; margin-left: 10px; font-size: 175%;"> Diabetes Prediction </h1>
+						</td>
+					</tr>
+				</table>
+				<br> <br> 				
+				<table style="width:650px; height:300px; text-align:center; margin-left:0px; margin-right: auto; margin-top: auto; margin-bottom: 0;">
+				<form action="{{ url_for('predict')}}" method="post" name="form" onsubmit="func()>
+					<div style="text-align:center; ">	
+						<tr>
+							<td class="lb">
+								<label>No. Of Pregnancies:</label>
+							</td>
+							<td class="bx">
+								<input type="text" name="Pregnancies" placeholder="No. Of Pregnancies" required="required" />
+							</td>
+						</tr>
+						<tr>
+							<td class="lb">
+								<label>Glucose Level:</label>
+							</td>
+							<td class="bx">
+								<input type="text" name="Glucose" placeholder="Glucose Level" required="required" />
+							</td>
+						</tr>
+						 <tr>
+							<td class="lb">
+								<label>Current Blood Pressure:</label>
+							</td>
+							<td class="bx">
+								<input type="text" name="Blood Pressure" placeholder="Current Blood Pressure" required="required" />
+							</td>
+						</tr>
+						<tr>
+							<td class="lb">
+								<label>Current Skin Thickness:</label>
+							</td>
+							<td class="bx">
+								<input type="text" name="Skin Thickness" placeholder="Current Skin Thickness" required="required" />
+							</td>
+						</tr>
+						<tr>
+							<td class="lb">
+								<label>Current Insulin Level:</label>
+							</td>
+							<td class="bx">
+								<input type="text" name="Insulin" placeholder="Current Insulin Level" required="required" />
+							</td>
+						</tr>
+						<tr>
+							<td class="lb">
+								<label>Body Mass Index:</label>
+							</td>
+							<td class="bx">
+								<input type="text" name="BMI" placeholder="Body Mass Index" required="required" />
+							</td>
+						</tr>
+						<tr>
+							<td class="lb">
+								<label>Diabetes Pedigree Function:</label>
+							</td>
+							<td class="bx">
+								<input type="text" name="DPF" placeholder="Diabetes Pedigree Function" required="required" />
+							</td>
+						</tr>
+						<tr>
+							<td class="lb">
+								<label>Age:</label>
+							</td>
+							<td class="bx">
+								<input type="text" name="Age" placeholder="Age" required="required" />
+							</td>
+						</tr>
+						<tr>
+							<td class="lb">
+								<button type="button" class="btn btn-primary btn-block btn-large" onclick="out()" style="font-size: 125%;">Clear</button>								
+							</td>
+							<td class="bx">
+								<button type="submit" class="btn btn-primary btn-block btn-large" style="font-size: 125%;">Predict</button>
+							</td>
+						</tr>						
+					</div>					
+				</form>
+				</table>
+				<br> <br>
+				<table id="tb1" style="border: 3px solid white; width: 650px; height: 75px; margin-left: 0px; margin-right: auto; margin-top: 0px; text-align: center;   "> 
+					<tr>
+						<td>
+							<h3> {{ prediction_text }} </h3>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-md-2">
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+    function func() {
+	document.forms["form"]["Pregnancies"].value="";
+	document.forms["form"]["Glucose"].value="";
+	document.forms["form"]["Blood Pressure"].value="";
+	document.forms["form"]["Skin Thickness"].value="";
+	document.forms["form"]["Insulin"].value="";
+	document.forms["form"]["BMI"].value="";
+	document.forms["form"]["DPF"].value="";
+	document.forms["form"]["Age"].value="";
+    }
+</html>
