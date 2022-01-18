@@ -3,6 +3,9 @@
 This repository consists of end-to-end Machine Learning project where the model is deployed on Heroku platform. </br>
 Heroku is a free, cloud platform, which provides Platform as a Service (PaaS) to the developers, which means a developer can build, run and deploy an application at scale. </br>
 
+Webapp:
+![Heroku_Output](https://user-images.githubusercontent.com/30742445/149907084-eadfb085-c7af-40e8-9e4e-c7a74201124d.png)
+
 Steps to deploy Machine Learning model in Heroku (via linking github repository with heroku): </br>
 Step 1: Build a Machine Learning and save the model in .pkl format. </br>
 Step 2: Create a Web App using Flask. </br>
